@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
+/* provides styles to the overall page */ 
+
 :root {
   font-size: 16px; 
   font-family: serif;
@@ -33,7 +35,8 @@ h1 {
 
 main { 
   display: flex; 
-  flex-flow: space-around flex; 
+  align-items: flex-start;
+  justify-content: space-evenly; 
 }
 
 section { 
