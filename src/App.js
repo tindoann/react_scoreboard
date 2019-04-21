@@ -4,6 +4,7 @@ import './App.css';
 import Team from './Team'; 
 
 // This page sets up the header and initial 'teamName' section 
+// Sets the initial logic of the program 
 
 class App extends Component {
   render() {
@@ -17,21 +18,24 @@ class App extends Component {
         initialScore: 0
       }
     ]
-    return (
-      <div>
-        <h1>My Scoreboard</h1>
-        <main>
-          {teams.map((team, index) => (
-            <Team
-              key={index}
-              teamName={team.teamName}
-              initialScore={team.initialScore}
-            />
-          ))}
-        </main>
-      </div>
-    )
+
+  // Setsup the header section of the scoreboard  and change state when the user inputs information 
+
+return (
+  <div>
+    <h1>My Scoreboard</h1>
+      <main>
+        {teams.map((team, index) => (
+          <Team 
+            key={index}
+            teamName={team.teamName}
+            initialScore={team.initialScore}
+          />
+        ))}
+      </main>
+    </div>
+    ) 
   }
-}
+} 
 
 export default App
