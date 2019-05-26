@@ -6,6 +6,8 @@ import { inlineArrayTransformer } from 'common-tags'
 // the constructor set the initial state that loads at the beginning
 // set the super(props) gives us the ability to use props throughout 
 
+// ability to change the value of the state
+
 class Team extends Component {
   constructor(props) {
     super(props)
@@ -16,15 +18,13 @@ class Team extends Component {
     }
   }
 
-// ability to change the value of the state
-
-  updateTeamName = event => { 
+  updateTeamName = event => {
     this.setState({
       teamName: event.target.value
     })
-  } 
+  }
 
-  // increments the score 
+  // increments the score with the addition button 
 
   addOneToScore = () => {
     this.setState({
@@ -32,8 +32,7 @@ class Team extends Component {
     })
   }
 
-
-  // decreases the score 
+  // decreases the score with the subtraction button 
   
   subtractOneFromScore = () => {
     this.setState({
@@ -41,7 +40,7 @@ class Team extends Component {
     })
   }
 
-
+  
   // Display the Team's Name and Score 
   // onChange event will watch the input changes and update the state
   // onChange method will trigger state update that will be passed to the child
@@ -56,8 +55,12 @@ class Team extends Component {
         <p>{this.state.score}</p>
         <ul>
           <li>
-            <label>Update Team Name</label>
-            <input type="text" value={this.state.teamName} onChange={this.updateTeamName} />
+            <label>Update team Name</label>
+            <input 
+              type='text' 
+              value={this.state.teamName} 
+              onChange={this.updateTeamName} 
+              />
           </li>
           <li>
             <label>Update Team Score</label>
@@ -71,3 +74,4 @@ class Team extends Component {
 }
 
 export default Team; 
+

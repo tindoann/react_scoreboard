@@ -19,23 +19,20 @@ class App extends Component {
       }
     ]
 
-  // Setsup the header section of the scoreboard  and change state when the user inputs information 
+  // Sets up the header section of the scoreboard and change state when the user inputs information 
+  // Also set up the overall content of the container
 
 return (
   <div>
     <h1>My Scoreboard</h1>
-      <main>
-        {teams.map((team, index) => (
-          <Team 
-            key={index}
-            teamName={team.teamName}
-            initialScore={team.initialScore}
-          />
-        ))}
-      </main>
-    </div>
-    ) 
-  }
-} 
+    <main>
+      {teams.map((team, index) => (
+        <Team key={index} teamName={team.teamName} initialScore={team.initialScore} />
+      ))}
+    </main>
+  </div>
+  )
+ }
+}
 
-export default App
+export default App; 
